@@ -48,3 +48,17 @@ Smart Cities ██████
 - Product UX: dashboards, mobile analytics apps, partner portals.
 - API integrations: insurer core systems, fleet platforms, IoT devices.
 - Security & compliance: privacy controls, audit trails, SOC2 readiness.
+
+---
+
+## Sources
+- Carota.ai — company profile and products: https://www.carota.ai/
+- AIG: https://www.aig.com/
+- Tokio Marine: https://www.tokiomarine.com/
+- Toyota: https://global.toyota/
+- Hyundai Motor Company: https://www.hyundai.com/worldwide/en
+- Grab: https://www.grab.com/
+- Uber: https://www.uber.com/
+- HERE Technologies: https://www.here.com/
+- TomTom: https://www.tomtom.com/
+- APAC mobility + smart city context (illustrative): https://www.adb.org/publications/smart-cities-asia-pacific
