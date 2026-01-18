@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carota.ai (Taiwan) — Partner Overview</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #0f172a;
+      --muted: #475569;
+      --accent: #1d4ed8;
+      --accent-2: #0ea5e9;
+      --accent-3: #22c55e;
+      --accent-4: #f97316;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 48px auto 96px;
+      padding: 0 24px;
+      display: grid;
+      gap: 32px;
+    }
+
+    .hero {
+      background: linear-gradient(120deg, #0f172a, #1e3a8a 55%, #1d4ed8 100%);
+      color: #fff;
+      padding: 48px;
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      top: -60px;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(255,255,255,0.24), transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: 40px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 560px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 20px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .stack {
+      display: grid;
+      gap: 16px;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .pill {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #e0f2fe;
+      color: #0f172a;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .metric {
+      background: #f1f5f9;
+      border-radius: 16px;
+      padding: 16px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .metric span {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .metric strong {
+      font-size: 18px;
+    }
+
+    .network {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .network .tile {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .tile h3 {
+      margin: 0;
+      font-size: 15px;
+      color: var(--accent);
+    }
+
+    .tile p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .chart {
+      display: grid;
+      gap: 12px;
+    }
+
+    .bar {
+      display: grid;
+      gap: 6px;
+    }
+
+    .bar span {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .bar div {
+      height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    }
+
+    .bar:nth-child(2) div {
+      width: 70%;
+      background: linear-gradient(90deg, var(--accent-2), var(--accent-3));
+    }
+
+    .bar:nth-child(3) div {
+      width: 55%;
+      background: linear-gradient(90deg, var(--accent-3), var(--accent-4));
+    }
+
+    .bar:nth-child(1) div {
+      width: 85%;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #cbd5f5;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -2px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.15);
+    }
+
+    .timeline-item strong {
+      display: block;
+      font-size: 15px;
+    }
+
+    .timeline-item span {
+      display: block;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .footer-note {
+      font-size: 12px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="hero">
+      <h1>Carota.ai (Taiwan)</h1>
+      <p>
+        Mobility data + AI analytics company delivering connected-vehicle insights for insurers,
+        fleets, and mobility ecosystems across APAC.
+      </p>
+      <div class="pill-list">
+        <span class="pill">Connected Vehicles</span>
+        <span class="pill">Driver Risk Analytics</span>
+        <span class="pill">Fleet Performance</span>
+        <span class="pill">Data Governance</span>
+      </div>
+    </section>
+
+    <section class="grid two">
+      <div class="card">
+        <span class="tag">Company Profile</span>
+        <div class="stack">
+          <div class="metric">
+            <span>Headquarters</span>
+            <strong>Taiwan</strong>
+          </div>
+          <div class="metric">
+            <span>Core Focus</span>
+            <strong>Connected-vehicle data + AI insights</strong>
+          </div>
+          <div class="metric">
+            <span>Delivery</span>
+            <strong>Dashboards, APIs, data products</strong>
+          </div>
+          <div class="metric">
+            <span>Governance</span>
+            <strong>Privacy-first, consent-based exchange</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="tag">Core Services</span>
+        <div class="stack">
+          <div class="metric">
+            <span>AI/ML Analytics</span>
+            <strong>Driver behavior & risk scoring</strong>
+          </div>
+          <div class="metric">
+            <span>Fleet Intelligence</span>
+            <strong>Utilization, safety, cost trends</strong>
+          </div>
+          <div class="metric">
+            <span>Data APIs</span>
+            <strong>OEMs, mobility platforms, smart cities</strong>
+          </div>
+          <div class="metric">
+            <span>Data Governance</span>
+            <strong>Privacy controls & consent workflows</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <span class="tag">Market Positioning & Network</span>
+      <div class="grid two" style="margin-top: 16px;">
+        <div class="stack">
+          <h2>Positioning</h2>
+          <p>
+            Positioned as the data/AI layer between OEMs, fleets, and insurers with Taiwan as the
+            APAC mobility hub.
+          </p>
+          <div class="chart">
+            <div class="bar">
+              <span>Insurers</span>
+              <div></div>
+            </div>
+            <div class="bar">
+              <span>Fleets</span>
+              <div></div>
+            </div>
+            <div class="bar">
+              <span>Smart Cities</span>
+              <div></div>
+            </div>
+          </div>
+        </div>
+        <div class="stack">
+          <h2>Illustrative Network</h2>
+          <div class="network">
+            <div class="tile">
+              <h3>Insurers</h3>
+              <p>AIG · Tokio Marine</p>
+            </div>
+            <div class="tile">
+              <h3>OEMs</h3>
+              <p>Toyota · Hyundai</p>
+            </div>
+            <div class="tile">
+              <h3>Mobility Platforms</h3>
+              <p>Grab · Uber</p>
+            </div>
+            <div class="tile">
+              <h3>Data Vendors</h3>
+              <p>HERE · TomTom</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="footer-note" style="margin-top: 16px;">
+        Client/vendor names are illustrative segments, not confirmed accounts.
+      </p>
+    </section>
+
+    <section class="grid two">
+      <div class="card">
+        <span class="tag">Potential Collaboration</span>
+        <div class="timeline" style="margin-top: 16px;">
+          <div class="timeline-item">
+            <strong>Co-build analytics pilots</strong>
+            <span>Insurer and fleet risk + performance dashboards.</span>
+          </div>
+          <div class="timeline-item">
+            <strong>Joint GTM motions</strong>
+            <span>Launch data APIs for mobility and smart-city initiatives.</span>
+          </div>
+          <div class="timeline-item">
+            <strong>Telematics expansion</strong>
+            <span>Integrate devices to broaden coverage and data depth.</span>
+          </div>
+          <div class="timeline-item">
+            <strong>Privacy leadership</strong>
+            <span>Co-design consented data exchange and governance.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="tag">Software Services We Can Offer</span>
+        <div class="grid" style="margin-top: 16px;">
+          <div class="metric">
+            <span>Data Engineering</span>
+            <strong>Ingestion pipelines, ETL, data quality tooling</strong>
+          </div>
+          <div class="metric">
+            <span>Cloud & MLOps</span>
+            <strong>Model deployment, monitoring, governance</strong>
+          </div>
+          <div class="metric">
+            <span>Product UX</span>
+            <strong>Dashboards, mobile analytics, partner portals</strong>
+          </div>
+          <div class="metric">
+            <span>Integrations</span>
+            <strong>Insurer cores, fleet platforms, IoT devices</strong>
+          </div>
+          <div class="metric">
+            <span>Security & Compliance</span>
+            <strong>Privacy controls, audit trails, SOC2 readiness</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
